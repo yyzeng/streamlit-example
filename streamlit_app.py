@@ -15,6 +15,9 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
+password_guess = st.text_input('What is the Password?')
+if password_guess != st.secrets["password"]:
+    st.stop()
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
